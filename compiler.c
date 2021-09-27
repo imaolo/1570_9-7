@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-main() {
+int main() {
    FILE *fp;
 
    fp = fopen("mad360.txt", "r");
-   fprint(fp);
+   fprintf(fp);
    fclose(fp);
+   return 0;
 }
