@@ -1,0 +1,7 @@
+	ADD R3, R1, R2
+	ADD R2, R4, R5 - WAR hazard
+	ADD R4, R1, R3
+	ADD R2, R5, R4 - RAW hazard
+	ADD R3, R5, R4
+	ADD R3, R5, R4 - WAW hazard
+    
