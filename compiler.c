@@ -4,7 +4,10 @@ int main() {
    FILE *fp;
 
    fp = fopen("mad360.txt", "r");
-   fprintf(fp);
+
+   char *line = NULL;
+   fscanf(line ,fp, "%s" );
+   printf("%s\n", line);
    fclose(fp);
    return 0;
 }
