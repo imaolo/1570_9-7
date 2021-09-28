@@ -4,7 +4,7 @@
 void removeSpaces(char* s) {
     char* d = s;
     do {
-        while (*d == ' ') {
+        while (*d == ' ' || *d == '\t') {
             ++d;
         }
     } while (*s++ = *d++);
