@@ -17,6 +17,7 @@ void extractRegisterName(char* s){
         while(s[0] != 'R')
             s++;
     }
+
 }
 
 int main(int argc, char* argv[])
@@ -36,6 +37,8 @@ int main(int argc, char* argv[])
         while (token != NULL){
             parsedData[i][tmp] = token;
             removeSpacesAndLineBreaks(parsedData[i][tmp]);
+            if (tmp == 2)
+                extractRegisterName(parsedData[i][tmp]);
             token = strtok(NULL, " ");
             tmp++;
         }
