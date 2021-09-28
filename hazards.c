@@ -17,11 +17,6 @@ int main(int argc, char* argv[])
     int num_lines = 0;
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
-    // printf("%d\n",num_lines);
-    // for (int i=0;i<num_lines;i++)
-    //     printf("%s",lines[i]);
-    
-    
     char *parsedData[num_lines][4];
     int lineSize[num_lines];
     char *token;
@@ -47,6 +42,10 @@ int main(int argc, char* argv[])
     if (parsedData[0][0][0] == 'B')
         printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
+        if (i == 2){
+            printf("%d\n",lineSize[i])
+            printf("%d\n",lineSize[i-1])
+        }
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
             //check for control hazards
             if (parsedData[i][0][0] == 'B')
