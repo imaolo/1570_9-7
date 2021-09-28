@@ -42,7 +42,9 @@ int main(int argc, char* argv[])
             parsedData[i][tmp] = token;
             removeSpacesAndLineBreaks(parsedData[i][tmp]);
             if (tmp == 2)
+                print("%s\n",parsedData[i][tmp]);
                 extractRegisterName(parsedData[i][tmp]);
+                print("%s\n",parsedData[i][tmp]);
             token = strtok(NULL, " ");
             tmp++;
         }
@@ -51,7 +53,7 @@ int main(int argc, char* argv[])
 
     for (int i=0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++){
-            printf("%s",parsedData[i][j]);
+            //printf("%s",parsedData[i][j]);
         }
         printf("\n");
     }
