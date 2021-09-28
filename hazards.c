@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     char *Rs1_p;
     char *Rs2_p; 
     if (parsedData[0][0][0] == 'B')
-        printf("Control Hazard at line %d\n",0);
+        printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
             Rd = parsedData[i][1];
@@ -54,9 +54,9 @@ int main(int argc, char* argv[])
             Rs1_p = parsedData[i][2];
 
             if ( strcmp(Rd,Rd_p) == 0)
-                printf("WAW hazard at line %d\n",i);
+                printf("WAW hazard at line %d\n",i+1);
             if (parsedData[i][0][0] == 'B')
-                printf("Control Hazard at line %d\n",i);
+                printf("Control Hazard at line %d\n",i+1);
         }   
     }
 
