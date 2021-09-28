@@ -2,10 +2,9 @@
 
 int main() {
    FILE *fp;
-
    fp = fopen("mad360.txt", "r");
 
-   char *line = NULL;
+   char line[256];
    fscanf(line ,fp, "%s" );
    printf("%s\n", line);
    fclose(fp);
