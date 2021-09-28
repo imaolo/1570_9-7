@@ -8,6 +8,7 @@ void removeSpaces(char *str1)
     while (*str2==' ') str2++;  
     if (str2!=str1) memmove(str1,str2,strlen(str2)+1);  
 }
+
 int main(int argc, char* argv[])
 {
     FILE* file = fopen("asm.txt", "r"); /* should check the result */
@@ -35,6 +36,10 @@ int main(int argc, char* argv[])
         lineSize[i] = tmp;  
     }
 
+    
+    for (int i=0;i<num_lines;i++)
+        printf("%s",lines[i]);
+    print("=============================================\n");
     for (int i=0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++)
             printf("%s",parsedData[i][j]);
