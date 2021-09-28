@@ -13,7 +13,6 @@ void removeSpacesAndLineBreaks(char* s) {
 }
 
 void extractRegisterName(char* s){
-    printf("%s\n",s);
     if(s[0] != 'R'){
         while(s[0] != 'R')
             s++;
@@ -22,9 +21,6 @@ void extractRegisterName(char* s){
             tmp++;
         s[tmp] = '\0';
     }
-    printf("%s\n",s);
-
-
 }
 
 int main(int argc, char* argv[])
