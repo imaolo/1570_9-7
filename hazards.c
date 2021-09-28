@@ -73,6 +73,9 @@ int main(int argc, char* argv[])
             }
             if (strcmp(Rd,Rs1_p) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
+            if (lineSize[i-1] == 4 && strcmp(Rd,Rs2_p) == 0)
+                printf("Line %d: WAR hazard\n",i+1);
+
         }   
     }
 
