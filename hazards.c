@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
         tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            removeSpaces(parsedData[i][tmp]);
+            removeSpacesAndLineBreaks(parsedData[i][tmp]);
             token = strtok(NULL, " ");
             tmp++;
         }
