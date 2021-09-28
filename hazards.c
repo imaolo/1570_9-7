@@ -38,6 +38,28 @@ int main(int argc, char* argv[])
         lineSize[i] = tmp;  
     }
 
+    char *Rd;
+    char *Rs1;
+    char *Rs2; 
+    char *Rd_p;
+    char *Rs1_p;
+    char *Rs2_p; 
+    if (parsedData[0][0][0] == 'B')
+        printf("Control Hazard at line %d\n",i);
+    for (int i=1;i<num_lines;i++){
+        if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
+            Rd = parsedData[i][1];
+            Rd_p = parsedData[i-1][1];
+            Rs1 = parsedData[i][2];
+            Rs1_p = parsedData[i][2];
+
+            if ( strcmp(Rd,Rd_p) == 0)
+                printf("WAW hazard at line %d\n",i);
+            if (parsedData[i][0][0] == 'B')
+                printf("Control Hazard at line %d\n",i);
+        }   
+    }
+
 
 
 
