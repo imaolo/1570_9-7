@@ -12,9 +12,7 @@ int main(int argc, char* argv[])
     char *tmp; 
     for (int i=0;i<num_lines;i++){
         tmp = strtok(lines[i]," ");
-        for (int j=0;j<3;j++){
-            printf("%s\n",tmp[j]);
-        }
+        printf("%s\n",tmp);
     }
 
     fclose(file);
