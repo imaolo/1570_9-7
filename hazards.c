@@ -41,10 +41,11 @@ int main(int argc, char* argv[])
         while (token != NULL){
             parsedData[i][tmp] = token;
             removeSpacesAndLineBreaks(parsedData[i][tmp]);
-            if (tmp == 2)
+            if (tmp == 2){
                 printf("%s\n",parsedData[i][tmp]);
                 extractRegisterName(parsedData[i][tmp]);
                 printf("%s\n",parsedData[i][tmp]);
+            }
             token = strtok(NULL, " ");
             tmp++;
         }
