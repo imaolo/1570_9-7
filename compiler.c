@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     for (int i=0;i<num_lines;i++){
         printf("%s",lines[i]);
         token = strtok(lines[i]," ");
-        printf("%s",lines[i]);
+        printf("%s\n",lines[i]);
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
