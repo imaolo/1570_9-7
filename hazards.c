@@ -18,6 +18,7 @@ void extractRegisterName(char* s){
         while(s[0] != 'R')
             s++;
     }
+    printf("%s\n",s);
 
 }
 
