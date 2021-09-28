@@ -58,29 +58,10 @@ int main(int argc, char* argv[])
             if ( strcmp(Rd,Rd_p) == 0)
                 printf("Line %d: WAW hazard\n",i+1);
 
-            //check for WAR and RAW hazards for ld and store
+            //check for WAR and RAW hazards for RS1
             Rs1 = parsedData[i][2];
             Rs1_p = parsedData[i][2];
-            while(Rs1_p[0] != 'R')
-                Rs1_p++;
-            tmp = 0;
-            while(Rs1_p[tmp] != '\0'){
-                if (Rs1_p[tmp] == ')'){
-                    Rs1_p[tmp] = '\0';
-                    break;
-                }
-                tmp++;
-            }
-            while(Rs1[0] != 'R')
-                Rs1++;
-            tmp = 0;
-            while(Rs1[tmp] != '\0'){
-                if (Rs1[tmp] == ')'){
-                    Rs1[tmp] = '\0';
-                    break;
-                }
-                tmp++;
-            }
+
             if (strcmp(Rd,Rs1_p) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
             if (strcmp(Rd_p,Rs1) == 0)
@@ -88,9 +69,6 @@ int main(int argc, char* argv[])
             
         }   
     }
-
-
-
 
     fclose(file);
     return 0;
@@ -101,3 +79,28 @@ int main(int argc, char* argv[])
 //https://stackoverflow.com/questions/9206091/going-through-a-text-file-line-by-line-in-c
 //https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
 //https://stackoverflow.com/questions/1726302/remove-spaces-from-a-string-in-c
+
+
+
+
+
+            // while(Rs1_p[0] != 'R')
+            //     Rs1_p++;
+            // tmp = 0;
+            // while(Rs1_p[tmp] != '\0'){
+            //     if (Rs1_p[tmp] == ')'){
+            //         Rs1_p[tmp] = '\0';
+            //         break;
+            //     }
+            //     tmp++;
+            // }
+            // while(Rs1[0] != 'R')
+            //     Rs1++;
+            // tmp = 0;
+            // while(Rs1[tmp] != '\0'){
+            //     if (Rs1[tmp] == ')'){
+            //         Rs1[tmp] = '\0';
+            //         break;
+            //     }
+            //     tmp++;
+            // }
