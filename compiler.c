@@ -9,7 +9,7 @@ void splitLine(char *line,int n,char *parsedData[]){
 
 int main(int argc, char* argv[])
 {
-    FILE* file = fopen("mad360.txt", "r"); /* should check the result */
+    FILE* file = fopen("asm.txt", "r"); /* should check the result */
     char lines[100][256];
     int num_lines = 0;
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
