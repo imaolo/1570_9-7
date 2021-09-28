@@ -25,9 +25,10 @@ int main(int argc, char* argv[])
     char *parsedData[num_lines][4];
     int lineSize[num_lines];
     char *token;
+    int tmp;
     for (int i=0;i<num_lines;i++){
         token = strtok(lines[i]," ");
-        int tmp = 0;
+        tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
             removeSpaces(parsedData[i][tmp]);
@@ -38,21 +39,8 @@ int main(int argc, char* argv[])
     }
 
 
-    printf("=============================================\n");
-    for (int i=0;i<num_lines;i++){
-        for (int j=0;j<lineSize[i];j++)
-            printf("%s",parsedData[i][j]);
-    }
 
 
-
-
-
-
-    // for (int i = 0;i<num_lines;i++){
-    //     for (int j=0;j<lineSize[i];j++){}
-    //         //printf("%s ",parsedData[i][j]);
-    // }
     fclose(file);
     return 0;
 }
@@ -61,3 +49,4 @@ int main(int argc, char* argv[])
 
 //https://stackoverflow.com/questions/9206091/going-through-a-text-file-line-by-line-in-c
 //https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
+//https://stackoverflow.com/questions/1726302/remove-spaces-from-a-string-in-c
