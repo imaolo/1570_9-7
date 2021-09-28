@@ -8,11 +8,18 @@ int main(int argc, char* argv[])
     int num_lines = 0;
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
-
-    char *tmp; 
+    
+    
+    char parsedData[numLines+2][3];
+    char *token;
     for (int i=0;i<num_lines;i++){
-        tmp = strtok(lines[i]," ");
-        printf("%s\n",tmp);
+        token = strtok(lines[i]," ");
+        int tmp = 0
+        while (token != NULL){
+            parsedData[i][tmp] = token
+            token = strtok(NULL, " ");
+            tmp++;
+        }
     }
 
     fclose(file);
@@ -23,4 +30,4 @@ int main(int argc, char* argv[])
 
 
 //https://stackoverflow.com/questions/9206091/going-through-a-text-file-line-by-line-in-c
-//
+//https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
