@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
             tmp++;
         }
         lineSize[i] = tmp+1;
+        print("%d\n",lineSize[i]);
     }
     for (int i = 0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++)
