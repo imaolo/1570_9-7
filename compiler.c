@@ -21,6 +21,12 @@ int main(int argc, char* argv[])
             tmp++;
         }
     }
+    for (int i = 0;i<num_lines;i++){
+        printf("%s",parsedData[i][0]);
+        printf("%s",parsedData[i][1]);
+        printf("%s",parsedData[i][2]);
+        printf("\n");
+    }
 
     fclose(file);
 
