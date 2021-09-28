@@ -43,8 +43,8 @@ int main(int argc, char* argv[])
         printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
         if (i == 2){
-            printf("%d\n",lineSize[i])
-            printf("%d\n",lineSize[i-1])
+            printf("%d\n",lineSize[i]);
+            printf("%d\n",lineSize[i-1]);
         }
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
             //check for control hazards
