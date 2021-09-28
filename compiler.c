@@ -30,14 +30,12 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            printf("%send\n",token);
+            //printf("%send\n",token);
             token = strtok(NULL, " ");
             tmp++;
         }
-        lineSize[i] = tmp+1;
-        //printf("%d\n",lineSize[i]);
-
-
+        printf("%s",lines[i]);
+        printf("%d\n",tmp);
     }
 
 
