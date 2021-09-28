@@ -16,6 +16,7 @@ void extractRegisterName(char* s){
     if(s[0] != 'R'){
         while(s[0] != 'R')
             s++;
+        s++;
         int tmp = 0;
         while (s[tmp] != ')')
             tmp++;
