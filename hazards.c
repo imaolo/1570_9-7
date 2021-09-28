@@ -69,6 +69,9 @@ int main(int argc, char* argv[])
             if (lineSize[i] == 4 && lineSize[i-1] == 4){  
                 Rs2 = parsedData[i][3];
                 Rs2_p = parsedData[i-1][3];
+                printf("%s\n",Rs2_p);
+                printf("%s\n",Rd);
+
                 //check for WAR
                 if (strcmp(Rs2_p,Rd) == 0)
                     printf("Line %d: WAR hazard\n",i+1);
