@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+char splitLine(char *line,int n){
+
+
+}
+
 int main(int argc, char* argv[])
 {
     FILE* file = fopen("mad360.txt", "r"); /* should check the result */
@@ -14,7 +19,7 @@ int main(int argc, char* argv[])
     
     
     
-    // char *parsedData[num_lines][3];
+    // char *parsedData[num_lines][4];
     // int lineSize[num_lines];
     // char *token;
     // for (int i=0;i<num_lines;i++){
