@@ -57,12 +57,12 @@ int main(int argc, char* argv[])
             Rs1_p = parsedData[i-1][2];
             Rd = parsedData[i][1];
             Rd_p = parsedData[i-1][1];
-            
 
-            //RS1 check hazards
             //check for WAW
             if ( strcmp(Rd,Rd_p) == 0)
                 printf("Line %d: WAW hazard\n",i+1);
+
+            //RS1 check hazards
             //check for WAR
             if (strcmp(Rs1_p,Rd) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
