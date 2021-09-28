@@ -34,6 +34,9 @@ int main(int argc, char* argv[])
             token = strtok(NULL, " ");
             tmp++;
         }
+        for (int j=0;j<tmp;j++){
+            printf("%s||",parsedData[i][j]);
+        }
         printf("%d\n",tmp);
         
     }
