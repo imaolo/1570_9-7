@@ -42,10 +42,6 @@ int main(int argc, char* argv[])
     if (parsedData[0][0][0] == 'B')
         printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
-        if (i == 2){
-            printf("%d\n",lineSize[i]);
-            printf("%d\n",lineSize[i-1]);
-        }
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
             //check for control hazards
             if (parsedData[i][0][0] == 'B')
@@ -71,6 +67,7 @@ int main(int argc, char* argv[])
 
             //check rs2
             if (lineSize[i] == 4 && lineSize[i-1] == 4){
+                printf("%d\n",i);
                 Rs2 = parsedData[i][3];
                 Rs2_p = parsedData[i-1][3];
                 //check for WAR
