@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-char splitLine(char *line,int n){
+void splitLine(char *line,int n,char *parsedData[]){
+    
 
 
 }
@@ -29,12 +30,14 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            //printf("%s",token);
+            printf("%send\n",token);
             token = strtok(NULL, " ");
             tmp++;
         }
         lineSize[i] = tmp+1;
-        printf("%d\n",lineSize[i]);
+        //printf("%d\n",lineSize[i]);
+
+
     }
 
 
