@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            printf ("%s",token)
+            printf ("%s",token);
             token = strtok(NULL, " ");
             tmp++;
         }
@@ -35,7 +35,6 @@ int main(int argc, char* argv[])
     }
 
     fclose(file);
-
     return 0;
 }
 
