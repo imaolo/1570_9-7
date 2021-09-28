@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
         token = strtok(lines[i]," ");
         int tmp = 0;
         while (token != NULL){
-            parsedData[i][tmp] = token
+            parsedData[i][tmp] = token;
             token = strtok(NULL, " ");
             tmp++;
         }
