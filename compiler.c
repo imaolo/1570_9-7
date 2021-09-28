@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
         i++;
     }
     for (int j=0;j<i;j++){
-        printf("%s\n", lines[j])
+        printf("%s\n", lines[j]);
     }
     /* may check feof here to make a difference between eof and io failure -- network
        timeout for instance */
