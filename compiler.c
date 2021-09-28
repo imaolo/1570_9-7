@@ -9,9 +9,9 @@ int main(int argc, char* argv[])
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
 
-    for (int i=0;i<num_lines;i++){
-        printf("%s",lines[i]);
-    }
+    // for (int i=0;i<num_lines;i++){
+    //     printf("%s",lines[i]);
+    // }
     
     
     char *parsedData[num_lines+2][3];
@@ -22,15 +22,16 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
+            printf ("%s",token)
             token = strtok(NULL, " ");
             tmp++;
         }
         lineSize[i] = tmp+1;
-        printf("%d\n",lineSize[i]);
+        //printf("%d\n",lineSize[i]);
     }
     for (int i = 0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++)
-            printf("%s ",parsedData[i][j]);
+            //printf("%s ",parsedData[i][j]);
     }
 
     fclose(file);
