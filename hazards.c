@@ -44,7 +44,6 @@ int main(int argc, char* argv[])
     char *Rd_p;
     char *Rs1_p;
     char *Rs2_p; 
-    int tmp;
     if (parsedData[0][0][0] == 'B')
         printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
@@ -62,11 +61,11 @@ int main(int argc, char* argv[])
             //check for WAR hazards
             Rs1 = parsedData[i][2];
             Rs1_p = parsedData[i][2];
-            while(Rs1 != 'R')
+            while(Rs1[0] != 'R')
                 Rs1++;
-            while(Rs_p != 'R')
+            while(Rs_p[0] != 'R')
                 Rs1_p++;
-            tmp = 0
+            tmp = 0;
             while(Rs1_p[tmp] != '\0'){
                 if (Rs1_p[tmp] == ')'){
                     Rs1_p[tmp] = '\0';
