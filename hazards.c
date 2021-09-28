@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     char *Rs1_p;
     char *Rs2_p; 
     if (parsedData[0][0][0] == 'B')
-        printf("Control Hazard at line %d\n",i);
+        printf("Control Hazard at line %d\n",0);
     for (int i=1;i<num_lines;i++){
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
             Rd = parsedData[i][1];
