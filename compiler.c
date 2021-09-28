@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-void removeSpaces(char *str1)  
-{
-    char *str2; 
-    str2=str1;  
-    while (*str2==' ') str2++;  
-    if (str2!=str1) memmove(str1,str2,strlen(str2)+1);  
+void remove_spaces(char* s) {
+    char* d = s;
+    do {
+        while (*d == ' ') {
+            ++d;
+        }
+    } while (*s++ = *d++);
 }
 
 int main(int argc, char* argv[])
@@ -37,8 +38,6 @@ int main(int argc, char* argv[])
     }
 
 
-    for (int i=0;i<num_lines;i++)
-        printf("%s",lines[i]);
     printf("=============================================\n");
     for (int i=0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++)
