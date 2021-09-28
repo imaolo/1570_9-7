@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
 
-    char *tmp
+    char *tmp; 
     for (int i=0;i<num_lines;i++){
         tmp = strtok(lines[i]," ");
         for (int j=0;j<3;j++){
