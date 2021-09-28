@@ -49,12 +49,12 @@ int main(int argc, char* argv[])
         lineSize[i] = tmp;  
     }
 
-    for (int i=0;i<num_lines;i++){
-        for (int j=0;j<lineSize[i];j++){
-            printf("%s",parsedData[i][j]);
-        }
-        printf("\n");
-    }
+    // for (int i=0;i<num_lines;i++){
+    //     for (int j=0;j<lineSize[i];j++){
+    //         printf("%s",parsedData[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     char *Rd;
     char *Rs1;
