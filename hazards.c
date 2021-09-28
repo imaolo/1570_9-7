@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
                 printf("Line %d: RAW hazard\n",i+1);
 
             //check rs2
-            if (lineSize[i] > 3 && lineSize[i-1] >3){
+            if (lineSize[i] == 4 && lineSize[i-1] == 4){
                 Rs2 = parsedData[i][3];
                 Rs2_p = parsedData[i-1][3];
                 //check for WAR
