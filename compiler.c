@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
         num_lines++;
     
     
-    char parsedData[num_lines+2][3];
+    char *parsedData[num_lines+2][3];
     char *token;
     for (int i=0;i<num_lines;i++){
         token = strtok(lines[i]," ");
