@@ -61,9 +61,7 @@ int main(int argc, char* argv[])
             //check for WAR hazards
             Rs1 = parsedData[i][2];
             Rs1_p = parsedData[i][2];
-            while(Rs1[0] != 'R')
-                Rs1++;
-            while(Rs_p[0] != 'R')
+            while(Rs1_p[0] != 'R')
                 Rs1_p++;
             tmp = 0;
             while(Rs1_p[tmp] != '\0'){
