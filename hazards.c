@@ -8,9 +8,14 @@ void removeSpacesAndLineBreaks(char* s) {
             ++d;
         }
     } while (*s++ = *d++);
-    if (s[strlen(s)-1] == '\n'){
-        printf("here\n");
+    if (s[strlen(s)-1] == '\n')
         s[strlen(s)-1] = '\0';
+}
+
+void extractRegisterName(char* s){
+    if(s[0] != "R"){
+        while(Rs1_p[0] != 'R')
+            Rs1_p++;
     }
 }
 
@@ -35,6 +40,13 @@ int main(int argc, char* argv[])
             tmp++;
         }
         lineSize[i] = tmp;  
+    }
+
+    for (int i=0;i<num_lines;i++){
+        for (int j=0;j<line_size[i];j++){
+            printf("%s",parsedData[i][j]);
+        }
+        printf("\n");
     }
 
     char *Rd;
