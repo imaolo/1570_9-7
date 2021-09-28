@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-void splitLine(char *line,int n,char *parsedData[]){
-    
-
-
+void removeSpaces(char *str1)  
+{
+    char *str2; 
+    str2=str1;  
+    while (*str2==' ') str2++;  
+    if (str2!=str1) memmove(str1,str2,strlen(str2)+1);  
 }
-
 int main(int argc, char* argv[])
 {
     FILE* file = fopen("asm.txt", "r"); /* should check the result */
@@ -17,9 +18,6 @@ int main(int argc, char* argv[])
     // printf("%d\n",num_lines);
     // for (int i=0;i<num_lines;i++)
     //     printf("%s",lines[i]);
-
-
-    
     
     
     char *parsedData[num_lines][4];
@@ -30,15 +28,16 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            printf("%s|",token);
+            removeSpaces(parsedData[i][tmp])
             token = strtok(NULL, " ");
             tmp++;
         }
-        for (int j=0;j<tmp;j++){
-            printf("%s||",parsedData[i][j]);
-        }
-        printf("%d\n",tmp);
-        
+        lineSize[i] = tmp;  
+    }
+
+    for (int i=0;i<num_lines;i++){
+        for (int j=0;j<lineSize[i];j++)
+            printf("%s",parsedData[i][j]);
     }
 
 
