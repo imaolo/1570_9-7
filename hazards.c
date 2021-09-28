@@ -42,9 +42,9 @@ int main(int argc, char* argv[])
             parsedData[i][tmp] = token;
             removeSpacesAndLineBreaks(parsedData[i][tmp]);
             if (tmp == 2)
-                print("%s\n",parsedData[i][tmp]);
+                printf("%s\n",parsedData[i][tmp]);
                 extractRegisterName(parsedData[i][tmp]);
-                print("%s\n",parsedData[i][tmp]);
+                printf("%s\n",parsedData[i][tmp]);
             token = strtok(NULL, " ");
             tmp++;
         }
