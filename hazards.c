@@ -44,19 +44,38 @@ int main(int argc, char* argv[])
     char *Rd_p;
     char *Rs1_p;
     char *Rs2_p; 
+    int tmp;
     if (parsedData[0][0][0] == 'B')
         printf("Control Hazard at line %d\n",1);
     for (int i=1;i<num_lines;i++){
         if (lineSize[i] >= 3 && lineSize[i-1] >= 3){
-            Rd = parsedData[i][1];
-            Rd_p = parsedData[i-1][1];
-            Rs1 = parsedData[i][2];
-            Rs1_p = parsedData[i][2];
-
-            if ( strcmp(Rd,Rd_p) == 0)
-                printf("Line %d: WAW hazard\n",i+1);
+            //check for control hazards
             if (parsedData[i][0][0] == 'B')
                 printf("Line %d: Control hazard\n",i+1);
+            
+            //check for WAW hazards
+            Rd = parsedData[i][1];
+            Rd_p = parsedData[i-1][1];
+            if ( strcmp(Rd,Rd_p) == 0)
+                printf("Line %d: WAW hazard\n",i+1);
+
+            //check for WAR hazards
+            Rs1 = parsedData[i][2];
+            Rs1_p = parsedData[i][2];
+            while(Rs1 != 'R')
+                Rs1++;
+            while(Rs_p != 'R')
+                Rs1_p++;
+            tmp = 0
+            while(Rs1_p[tmp] != '\0'){
+                if (Rs1_p[tmp] == ')'){
+                    Rs1_p[tmp] = '\0';
+                    break;
+                }
+                tmp++;
+            }
+            if (strcmp(Rd,Rs1_p) == 0)
+                printf("Line %d: WAR hazard\n",i+1);
         }   
     }
 
