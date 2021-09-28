@@ -54,9 +54,9 @@ int main(int argc, char* argv[])
             Rs1_p = parsedData[i][2];
 
             if ( strcmp(Rd,Rd_p) == 0)
-                printf("WAW hazard at line %d\n",i+1);
+                printf("Line %d: WAW hazard\n",i+1);
             if (parsedData[i][0][0] == 'B')
-                printf("Control Hazard at line %d\n",i+1);
+                printf("Line %d: Control hazard\n",i+1);
         }   
     }
 
