@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
             if ( strcmp(Rd,Rd_p) == 0)
                 printf("Line %d: WAW hazard\n",i+1);
 
-            //check for WAR hazards
+            //check for WAR and RAW hazards for ld and store
             Rs1 = parsedData[i][2];
             Rs1_p = parsedData[i][2];
             while(Rs1_p[0] != 'R')
@@ -71,11 +71,21 @@ int main(int argc, char* argv[])
                 }
                 tmp++;
             }
+            while(Rs1[0] != 'R')
+                Rs1++;
+            tmp = 0;
+            while(Rs1[tmp] != '\0'){
+                if (Rs1[tmp] == ')'){
+                    Rs1[tmp] = '\0';
+                    break;
+                }
+                tmp++;
+            }
             if (strcmp(Rd,Rs1_p) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
-            if (lineSize[i-1] == 4 && strcmp(Rd,Rs2_p) == 0)
+            if (strcmp(Rd_p,Rs1) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
-
+            
         }   
     }
 
