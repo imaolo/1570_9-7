@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void remove_spaces(char* s) {
+void removeSpaces(char* s) {
     char* d = s;
     do {
         while (*d == ' ') {
