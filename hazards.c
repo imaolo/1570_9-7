@@ -51,20 +51,23 @@ int main(int argc, char* argv[])
             //check for control hazards
             if (parsedData[i][0][0] == 'B')
                 printf("Line %d: Control hazard\n",i+1);
-            
-            //check for WAW hazards
+
+            //load register arguments
+            Rs1 = parsedData[i][2];
+            Rs1_p = parsedData[i-1][2];
             Rd = parsedData[i][1];
             Rd_p = parsedData[i-1][1];
+            
+
+            //RS1 check hazards
+            //check for WAW
             if ( strcmp(Rd,Rd_p) == 0)
                 printf("Line %d: WAW hazard\n",i+1);
-
-            //check for WAR and RAW hazards for RS1
-            Rs1 = parsedData[i][2];
-            Rs1_p = parsedData[i][2];
-
-            if (strcmp(Rd,Rs1_p) == 0)
+            //check for WAR
+            if (strcmp(Rs1_p,Rd) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
-            if (strcmp(Rd_p,Rs1) == 0)
+            //check for RAW
+            if (strcmp(Rs1,Rd_p) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
             
         }   
