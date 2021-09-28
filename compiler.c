@@ -25,12 +25,11 @@ int main(int argc, char* argv[])
             token = strtok(NULL, " ");
             tmp++;
         }
-        lineSize[i] = tmp;
+        lineSize[i] = tmp+1;
     }
     for (int i = 0;i<num_lines;i++){
         for (int j=0;j<lineSize[i];j++)
             printf("%s ",parsedData[i][j]);
-        printf("\n");
     }
 
     fclose(file);
