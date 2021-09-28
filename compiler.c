@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
     
     
     char *parsedData[num_lines+2][3];
+    int lineSize[num_lines+2];
     char *token;
     for (int i=0;i<num_lines;i++){
         token = strtok(lines[i]," ");
@@ -20,11 +21,11 @@ int main(int argc, char* argv[])
             token = strtok(NULL, " ");
             tmp++;
         }
+        lineSize[i] = tmp;
     }
     for (int i = 0;i<num_lines;i++){
-        printf("%s ",parsedData[i][0]);
-        printf("%s ",parsedData[i][1]);
-        printf("%s ",parsedData[i][2]);
+        for (int j=0;j<lineSize[i];j++)
+            printf("%s ",parsedData[i][j]);
         printf("\n");
     }
 
