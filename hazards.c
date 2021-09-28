@@ -12,18 +12,18 @@ void removeSpacesAndLineBreaks(char* s) {
         s[strlen(s)-1] = '\0';
 }
 
-void extractRegisterName(char* s){
+char* extractRegisterName(char* s){
     printf("in func\n");
     printf("%s\n",s);
     if(s[0] != 'R'){
         while(s[0] != 'R')
             s++;
-        s++;
         int tmp = 0;
         while (s[tmp] != ')')
             tmp++;
         s[tmp] = '\0';
     }
+    return s;
     printf("%s\n",s);
     printf("out of func\n");
 }
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
             removeSpacesAndLineBreaks(parsedData[i][tmp]);
             if (tmp == 2){
                 printf("%s\n",parsedData[i][tmp]);
-                extractRegisterName(parsedData[i][tmp]);
+                parsedData[i][tmp] = extractRegisterName(parsedData[i][tmp]);
                 printf("%s\n",parsedData[i][tmp]);
             }
             token = strtok(NULL, " ");
