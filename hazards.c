@@ -13,6 +13,7 @@ void removeSpacesAndLineBreaks(char* s) {
 }
 
 void extractRegisterName(char* s){
+    printf("%s\n",s);
     if(s[0] != 'R'){
         while(s[0] != 'R')
             s++;
