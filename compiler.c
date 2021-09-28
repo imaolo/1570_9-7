@@ -8,9 +8,9 @@ int main(int argc, char* argv[])
     int num_lines = 0;
     while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
-    for (int i=0;i<num_lines;i++){
+    for (int i=0;i<num_lines;i++)
         printf("%s",lines[i]);
-    }
+    printf("%d\n",num_lines)
     
     
     char *parsedData[num_lines][3];

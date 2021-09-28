@@ -52,7 +52,3 @@ NEXT2:
     ADD R1 R2 R3
     ADD R4 R5 R6
     SUB R1 R2 R3
-
-
-
-
