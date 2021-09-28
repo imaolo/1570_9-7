@@ -6,13 +6,11 @@ int main(int argc, char* argv[])
     FILE* file = fopen("mad360.txt", "r"); /* should check the result */
     char lines[100][256];
     int num_lines = 0;
-    // while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
-    //     num_lines++;
-    while (fscanf(file,"%s",lines[num_lines]))
+    while (fgets(lines[num_lines], sizeof(lines[num_lines]), file))
         num_lines++;
-    // printf("%d\n",num_lines);
-    // for (int i=0;i<num_lines;i++)
-    //     printf("%s",lines[i]);
+    printf("%d\n",num_lines);
+    for (int i=0;i<num_lines;i++)
+        printf("%s",lines[i]);
     
     
     
