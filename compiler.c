@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
         //printf("%d\n",lineSize[i]);
     }
     for (int i = 0;i<num_lines;i++){
-        for (int j=0;j<lineSize[i];j++)
+        for (int j=0;j<lineSize[i];j++){}
             //printf("%s ",parsedData[i][j]);
     }
 
