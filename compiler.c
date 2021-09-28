@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
         int tmp = 0;
         while (token != NULL){
             parsedData[i][tmp] = token;
-            removeSpaces(parsedData[i][tmp])
+            removeSpaces(parsedData[i][tmp]);
             token = strtok(NULL, " ");
             tmp++;
         }
