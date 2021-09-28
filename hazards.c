@@ -69,6 +69,18 @@ int main(int argc, char* argv[])
             //check for RAW
             if (strcmp(Rs1,Rd_p) == 0)
                 printf("Line %d: WAR hazard\n",i+1);
+
+            //check rs2
+            if (lineSize[i] > 3 && lineSize[i-1] >3){
+                Rs2 = parsedData[i][3];
+                Rs2_p = parsedData[i-1][3];
+                //check for WAR
+                if (strcmp(Rs2_p,Rd) == 0)
+                    printf("Line %d: WAR hazard\n",i+1);
+                //check for RAW
+                if (strcmp(Rs2,Rd_p) == 0)
+                    printf("Line %d: WAR hazard\n",i+1);
+            }
             
         }   
     }
