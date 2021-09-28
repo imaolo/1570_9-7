@@ -13,18 +13,19 @@ void removeSpacesAndLineBreaks(char* s) {
 }
 
 void extractRegisterName(char* s){
-    char* d = s;
+    printf("in func\n");
+    printf("%s\n",s);
     if(s[0] != 'R'){
-        do {
-            while (*d != 'R') {
-                ++d;
-            }
-        } while (*s++ = *d++);
+        while(s[0] != 'R')
+            s++;
+        s++;
         int tmp = 0;
-        while (d[tmp] != ')')
+        while (s[tmp] != ')')
             tmp++;
-        d[tmp] = '\0';
+        s[tmp] = '\0';
     }
+    printf("%s\n",s);
+    printf("out of func\n");
 }
 
 int main(int argc, char* argv[])
